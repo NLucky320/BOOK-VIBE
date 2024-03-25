@@ -4,6 +4,9 @@ import Home from "../Pages/Home";
 import ErrorPage from "../components/ErrorPage";
 import MainLayouts from "../Layouts/MainLayouts";
 import BookDetails from "../Pages/BookDetails";
+import ListedBooks from "../Pages/ListedBooks";
+import Wishlist from "../components/Wishlist";
+import ReadBooks from "../components/ReadBooks";
 
 export const router = createBrowserRouter([
   {
@@ -20,8 +23,23 @@ export const router = createBrowserRouter([
             path: '/bookDetails/:id',
             element: <BookDetails></BookDetails>,
             loader:()=>fetch('/data.json')
+        },
+        {
+            path: '/listedBooks',
+            element: <ListedBooks></ListedBooks>,
+            children: [ 
+                {
+                    index: true,
+                    element: <ReadBooks></ReadBooks>
+            },
+                 {
+            path: 'wishlist',
+            element: <Wishlist></Wishlist>
         }
       
+            ]
+        },
+       
     ]
   },
  

@@ -35,7 +35,7 @@ const Nav = () => {
               Home
             </NavLink>
             <NavLink
-              to="/book-details"
+              to="/listedBooks"
               className={({ isActive }) =>
                 isActive ? "text-[#23BE0A] font-bold border border-solid p-2 px-4 border-[#23BE0A]" : "font-bold"
               }
@@ -43,7 +43,7 @@ const Nav = () => {
              Listed Books
             </NavLink>
             <NavLink
-              to="/"
+              to="/pagesToRead"
               className={({ isActive }) =>
                 isActive ? "text-[#23BE0A] font-bold border border-solid p-2 px-4 border-[#23BE0A]" : "font-bold"
               }

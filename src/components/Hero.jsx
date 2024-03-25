@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="max-w-[526px]">
       <h1 className="text-5xl font-bold pb-10">Books to freshen up your bookshelf</h1>
     
-     <Link to='' className="self-center px-8 py-3 bg-[#23BE0A] text-white rounded">View The List</Link>
+     <Link to='/listedBooks' className="self-center px-8 py-3 bg-[#23BE0A] text-white rounded">View The List</Link>
     </div>
   </div>
 </div>
