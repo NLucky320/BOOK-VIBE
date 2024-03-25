@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import Book from "./Book";
+import useBooksData from "../Hooks/useBooksData";
 
 const Books = () => {
       const [books, setBooks] = useState([]);
-
-    useEffect(() => {
-        fetch('/data.json')
-            .then(res => res.json())
-        .then(data=>setBooks(data))
-    },[])
+    const { data} = useBooksData();
+     useEffect(() => {
+    setBooks(data)
+    
+    
+    }, [data])
+    // useEffect(() => {
+    //     fetch('/data.json')
+    //         .then(res => res.json())
+    //     .then(data=>setBooks(data))
+    // },[])
     return (
         <div className="p-4 md:mt-[80px] text-center"> 
             <h2 className="font-bold text-[40px]">Books</h2>
