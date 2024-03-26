@@ -1,5 +1,5 @@
 import { getBooks} from "../Utils";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 const ReadBooks = () => {
       const savedBooks = getBooks();
  
@@ -47,9 +47,9 @@ const ReadBooks = () => {
               <button className="text-[#FFAC33] bg-[#FFAC3326] p-4 rounded-[30px]">
                 Rating: {book.rating}
               </button>
-              <button className="btn bg-[#23BE0A] text-white p-4 rounded-[30px]">
+              <Link to={`/bookDetails/${book.bookId}`} className="btn bg-[#23BE0A] text-white p-4 rounded-[30px]">
                 View Details
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { getBooks } from '../Utils';
+import { Link } from 'react-router-dom';
 const Wishlist = () => {
      const savedBooks = getBooks();
     return (
@@ -31,7 +32,9 @@ Page: {book.totalPages}
                         <div className="card-actions flex flex-col md:flex-row gap-4">
                             <button className="text-[#328EFF] bg-[#328EFF42] p-4 rounded-[30px]" >Category: {book.category}</button>
                             <button className="text-[#FFAC33] bg-[#FFAC3326] p-4 rounded-[30px]">Rating: { book.rating}</button>
-                            <button className="btn bg-[#23BE0A] text-white p-4 rounded-[30px]">View Details</button>
+                            <Link to={`/bookDetails/${book.bookId}`} className="btn bg-[#23BE0A] text-white p-4 rounded-[30px]">
+                View Details
+              </Link>
                         </div>
                     </div>
                 </div>
