@@ -28,7 +28,7 @@ const PageToRead = () => {
     pages: book.totalPages,
   }));
 
-  const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
+  const colors = ["#0085F6", "#00C29C", "#FBB929", "#FC8042", "#FB0100", "violet"];
 
   const getPath = (x, y, width, height) => {
     return `M${x},${y + height}C${x + width / 3},${y + height} ${
@@ -48,7 +48,7 @@ const PageToRead = () => {
   };
 
   return (
-    <div className="h-[500px] w-full m-4 mx-auto mt-[140px] p-4 border-black border border-solid ">
+    <div className="h-[500px] w-full m-4 mx-auto mt-[140px] p-4 border-black border border-solid bg-[#13131308] ">
 
           <ResponsiveContainer>
               <BarChart  

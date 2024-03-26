@@ -93,7 +93,7 @@ const Nav = () => {
             <NavLink
               to="/aboutUs"
               className={({ isActive }) =>
-                isActive ? "text-primary font-bold" : "font-bold"
+                isActive ? "text-[#23BE0A] font-bold border border-solid p-2 px-4 border-[#23BE0A]" : "font-bold"
               }
             >
            About Us
