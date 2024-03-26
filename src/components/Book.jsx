@@ -2,7 +2,7 @@
 import { MdOutlineStarRate } from "react-icons/md";
 import { Link } from "react-router-dom";
 const Book = ({ book }) => {
-  console.log(book);
+  // console.log(book);
   return (
     <Link to={`/bookDetails/${book.bookId}`}>
       <div className="card bg-base h-full p-6 border border-solid border-[#13131326]">

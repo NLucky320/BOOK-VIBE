@@ -1,10 +1,55 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import useBooksData from "../Hooks/useBooksData";
 
 const ListedBooks = () => {
-  const { data } = useBooksData();
+const { data } = useBooksData();
+  const [sortedBooks, setSortedBooks] = useState(data);
   const [tabIndex, setTabIndex] = useState(0);
+
+
+  // Function to sort books based on rating in descending order
+  const sortByRating = () => {
+    const sorted = [...sortedBooks].sort((a, b) => b.rating - a.rating);
+    console.log("Sorted by Rating:", sorted);
+    setSortedBooks(sorted);
+  };
+
+  // Function to sort books based on number of pages in descending order
+  const sortByPages = () => {
+    const sorted = [...sortedBooks].sort((a, b) => b.totalPages - a.totalPages);
+    console.log("Sorted by Pages:", sorted);
+    setSortedBooks(sorted);
+  };
+
+  // Function to sort books based on published year in descending order
+  const sortByYear = () => {
+    const sorted = [...sortedBooks].sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+    console.log("Sorted by Year:", sorted);
+    setSortedBooks(sorted);
+  };
+
+  // Handler for selecting a sorting option
+  const handleSortOption = (option) => {
+    if (option === "Rating") {
+      sortByRating();
+    } else if (option === "Number of pages") {
+      sortByPages();
+    } else if (option === "Published year") {
+      sortByYear();
+    }
+  };
+
+  useEffect(() => {
+    // Update sortedBooks whenever data changes
+    setSortedBooks(data);
+  }, [data]);
+
+  useEffect(() => {
+    // console.log("Sorted Books:", sortedBooks);
+  }, [sortedBooks]);
+
+
   return (
     <div className="p-4 lg:mt-[30px">
       <div className="bg-[#1313130D] p-6 rounded-[24px]">
@@ -24,18 +69,18 @@ const ListedBooks = () => {
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Rating</a>
+              <a onClick={() => handleSortOption("Rating")}>Rating</a>
             </li>
             <li>
-              <a>Number of pages</a>
+              <a onClick={() => handleSortOption("Number of pages")}>Number of pages</a>
             </li>
             <li>
-              <a>Published year</a>
+              <a onClick={() => handleSortOption("Published year")}>Published year</a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
+       <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
         <Link
           to=""
           onClick={() => setTabIndex(0)}
@@ -62,6 +107,7 @@ const ListedBooks = () => {
       <div className="mt-8">
         <Outlet></Outlet>
       </div>
+      
     </div>
   );
 };

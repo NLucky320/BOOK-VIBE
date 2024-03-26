@@ -1,5 +1,5 @@
 import { getBooks} from "../Utils";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 const ReadBooks = () => {
       const savedBooks = getBooks();
  
