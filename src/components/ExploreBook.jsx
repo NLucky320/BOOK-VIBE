@@ -3,7 +3,7 @@ import React from 'react';
 const ExploreBook = ({book}) => {
     return (
         <div>
-           <div className="card bg-base-100 shadow-xl h-full">
+           <div className="card bg-base-100 shadow-xl h-full ">
   <figure className="px-10 py-5 bg-blue-gray-50">
     <img src={book.image} alt="Shoes" className="rounded-xl" />
   </figure>

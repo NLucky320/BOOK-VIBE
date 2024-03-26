@@ -48,7 +48,7 @@ const PageToRead = () => {
   };
 
   return (
-    <div className="h-[500px] w-full mx-auto m-4 md:mt-10 p-4 border-black border border-solid ">
+    <div className="h-[500px] w-full m-4 mx-auto mt-[140px] p-4 border-black border border-solid ">
 
           <ResponsiveContainer>
               <BarChart  
