@@ -69,7 +69,7 @@ const BookDetails = () => {
                 </Typography>
                 <div className="items-center flex-shrink-0 hidden lg:flex gap-4">
 			<button onClick={()=>handleBook(bookDetail)} className="self-center px-8 py-3  text-[#131313] rounded border border-solid border-[#1313134D]">Read</button>
-			<button className="self-center px-8 py-3 font-semibold rounded bg-[#59C6D2] text-white">Wishlist</button>
+			<button onClick={()=>handleBook(bookDetail)}  className="self-center px-8 py-3 font-semibold rounded bg-[#59C6D2] text-white">Wishlist</button>
 		</div>
       </CardBody>
     </Card>
