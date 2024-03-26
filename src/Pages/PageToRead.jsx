@@ -10,7 +10,7 @@ const PageToRead = () => {
     return <div>No books to display</div>;
   }
     const { localData } = useLocalStorage();
-    console.log(localData)
+    // console.log(localData)
   // Filter only books from the "Read" section
   const readBooks = savedBooks.filter(book => book.section === 'Read');
   // Extract page numbers from read books
@@ -39,10 +39,10 @@ const PageToRead = () => {
   
       <BarChart
         width={1000}
-        height={300}
+        height={500}
         data={data}
         margin={{
-          top: 20,
+          top: 50,
           right: 30,
           left: 20,
           bottom: 5,
