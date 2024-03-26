@@ -9,18 +9,18 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { saveBooks } from "../Utils";
 
 const BookDetails = () => {
-    const bookDetails = useLoaderData();
-    
-    // console.log(bookDetails)
+    const bookDetailS = useLoaderData();
     const { id } = useParams();
-    // console.log(typeof id)
-      const idInt = parseInt(id);
-    const bookDetail = bookDetails.find(bookDetail => bookDetail.bookId == idInt);
-    // console.log(bookDetail)
-    const handleBook = bookDetail => {
-        console.log(bookDetail)
-        saveBooks(bookDetail)
-    }
+    const idInt = parseInt(id);
+    const bookDetail = bookDetailS.find(bookDetail => bookDetail.bookId === idInt);
+
+    const handleSaveToRead = () => {
+        saveBooks(bookDetail, "Read");
+    };
+
+    const handleSaveToWishlist = () => {
+        saveBooks(bookDetail, "Wishlist");
+    };
     return (
          <Card className="w-full flex-col items-center md:flex-row my-[50px] gap-4">
       <CardHeader
@@ -67,10 +67,10 @@ const BookDetails = () => {
                 <Typography color="gray" className="font-normal text-[#131313]">
   <span className="text-[#131313B2]">    Rating: </span> {bookDetail.rating}
                 </Typography>
-                <div className="items-center flex-shrink-0 hidden lg:flex gap-4">
-			<button onClick={()=>handleBook(bookDetail)} className="self-center px-8 py-3  text-[#131313] rounded border border-solid border-[#1313134D]">Read</button>
-			<button onClick={()=>handleBook(bookDetail)}  className="self-center px-8 py-3 font-semibold rounded bg-[#59C6D2] text-white">Wishlist</button>
-		</div>
+              <div className="items-center flex-shrink-0 hidden lg:flex gap-4">
+                    <button onClick={handleSaveToRead} className="self-center px-8 py-3 text-[#131313] rounded border border-solid border-[#1313134D]">Read</button>
+                    <button onClick={handleSaveToWishlist} className="self-center px-8 py-3 font-semibold rounded bg-[#59C6D2] text-white">Wishlist</button>
+                </div>
       </CardBody>
     </Card>
     );

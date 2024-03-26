@@ -5,7 +5,9 @@ const Wishlist = () => {
     return (
         <div>
              <div className='mb-4'> 
-            {savedBooks.map((book, index) => (
+            {savedBooks
+                    .filter(book => book.section === 'Wishlist')
+                    .map((book, index) =>(
                 <div key={index} className="card flex flex-col md:flex-row bg-base-100 shadow-xl mb-4">
                     <div className='w-[230px] bg-[#1313130D]'><figure className='px-10 pt-10 bg-[#F3F3F3] p-4 rounded-lg'><img className='' src={book.image} alt="Book Cover"/></figure></div>
                     <div className="card-body">

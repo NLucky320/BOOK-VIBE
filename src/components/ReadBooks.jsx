@@ -1,12 +1,15 @@
-import { getBooks } from "../Utils";
+import { getBooks} from "../Utils";
 import { useLoaderData } from "react-router-dom";
 const ReadBooks = () => {
-  const savedBooks = getBooks();
+      const savedBooks = getBooks();
+ 
 
-  console.log(savedBooks);
+//   console.log(savedBooks);
   return (
     <div className="mb-4">
-      {savedBooks.map((book, index) => (
+      {savedBooks
+                .filter(book => book.section === 'Read')
+                .map((book, index) => (
         <div
           key={index}
           className="card flex flex-col md:flex-row bg-base-100 shadow-xl mb-4"
