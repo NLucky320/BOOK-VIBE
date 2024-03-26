@@ -5,21 +5,33 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-import { useLoaderData, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { saveBooks } from "../Utils";
+import useBooksData from "../Hooks/useBooksData";
+import { useEffect, useState } from "react";
 
 const BookDetails = () => {
-    const bookDetailS = useLoaderData();
-    const { id } = useParams();
-    const idInt = parseInt(id);
-    const bookDetail = bookDetailS.find(bookDetail => bookDetail.bookId === idInt);
+  // const bookDetailS = useLoaderData();
+  const { data } = useBooksData();
+  const [singleData, setSingleData] = useState({});
+  const { id } = useParams();
+//   console.log(id, singleData);
+ 
+    
+  useEffect(() => {
+  const singleData = data.find((item) => item.bookId == id);
+  setSingleData(singleData);
+}, [data, id]);
 
+  const { image, bookName, author, category, review,tags,publisher,yearOfPublishing,rating,totalPages  } =
+    singleData || {};
+  
     const handleSaveToRead = () => {
-        saveBooks(bookDetail, "Read");
+        saveBooks(singleData, "Read");
     };
 
     const handleSaveToWishlist = () => {
-        saveBooks(bookDetail, "Wishlist");
+        saveBooks(singleData, "Wishlist");
     };
     return (
          <Card className="w-full flex-col items-center md:flex-row my-[50px] gap-4">
@@ -29,43 +41,44 @@ const BookDetails = () => {
         className="m-0  w-1/2 lg:w-2/5 shrink-0 rounded-r-none"
       >
         <img
-          src={bookDetail.image}
+          src={image}
           className="h-full w-full object-cover bg-[#1313130D] p-12"
         />
       </CardHeader>
       <CardBody className="space-y-2">
         <Typography variant="h4" color="blue-gray" className="mb-2">
-      {bookDetail.bookName}
+      {bookName}
                 </Typography>
                 
         <Typography color="gray" className="font-normal border-b border-dashed p-2 w-full">
-          By: {bookDetail.author}
+          By: {author}
         </Typography>
         <Typography color="gray" className="font-normal border-b border-dashed p-2">
-        {bookDetail.category}
+        {category}
         </Typography>
         
         <Typography color="gray" className="font-normal text-[#131313B2]">
-        <span className="text-[#131313] font-bold">Review: </span>    {bookDetail.review}
+        <span className="text-[#131313] font-bold">Review: </span>    {review}
         </Typography>
-         <Typography color="gray" className="font-normal border-b border-dashed p-2">
-         <div className="flex gap-3 text-center items-center">
-                         <span className="text-[#131313] font-bold">Tag: </span> {bookDetail.tags.map((tag, index) => ( 
-                              <p className="text-[#23BE0A]  bg-[#17BE0A0D] rounded-[30px] p-2 px-6" key={index}> #{tag}</p>
-                          ))}
-                  </div>
-                </Typography>
+             <div className="font-normal border-b border-dashed p-2">
+  <div className="flex gap-3 items-center">
+    <span className="text-gray-800 font-bold">Tag: </span>
+    {tags && tags.map((tag, index) => ( 
+      <p className="text-green-500 bg-green-100 rounded-full p-2 px-6" key={index}>#{tag}</p>
+    ))}
+  </div>
+</div>
                 <Typography color="gray" className="font-normal text-[#131313]">
-  <span className="text-[#131313B2]">    Number of Pages: </span> {bookDetail.totalPages}
-        </Typography>
-                <Typography color="gray" className="font-normal text-[#131313]">
-  <span className="text-[#131313B2]">    Publisher: </span> {bookDetail.publisher}
+  <span className="text-[#131313B2]">    Number of Pages: </span> {totalPages}
         </Typography>
                 <Typography color="gray" className="font-normal text-[#131313]">
-  <span className="text-[#131313B2]">    Year of Publishing: </span> {bookDetail.yearOfPublishing}
+  <span className="text-[#131313B2]">    Publisher: </span> {publisher}
         </Typography>
                 <Typography color="gray" className="font-normal text-[#131313]">
-  <span className="text-[#131313B2]">    Rating: </span> {bookDetail.rating}
+  <span className="text-[#131313B2]">    Year of Publishing: </span> {yearOfPublishing}
+        </Typography>
+                <Typography color="gray" className="font-normal text-[#131313]">
+  <span className="text-[#131313B2]">    Rating: </span> {rating}
                 </Typography>
               <div className="items-center flex-shrink-0 hidden lg:flex gap-4">
                     <button onClick={handleSaveToRead} className="self-center px-8 py-3 text-[#131313] rounded border border-solid border-[#1313134D]">Read</button>

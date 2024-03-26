@@ -9,7 +9,8 @@ const Books = () => {
     setBooks(data)
     
     
-    }, [data])
+     }, [data])
+    // console.log(data)
     // useEffect(() => {
     //     fetch('/data.json')
     //         .then(res => res.json())
@@ -20,7 +21,7 @@ const Books = () => {
             <h2 className="font-bold text-[40px]">Books</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
  {
-                books.map(book => <Book key={book.bookId} book={book}></Book> )
+                data.map(book => <Book key={book.bookId} book={book}></Book> )
             }
             </div>
         </div>

@@ -1,31 +1,28 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import useBooksData from "../Hooks/useBooksData";
+import { getBooks } from "../Utils";
 
 const ListedBooks = () => {
-const { data } = useBooksData();
-  const [sortedBooks, setSortedBooks] = useState(data);
+  const savedBooks = getBooks();
+  const [sortedBooks, setSortedBooks] = useState([]);
   const [tabIndex, setTabIndex] = useState(0);
-
+  const [displayBook, setDisplayBook]=useState([])
 
   // Function to sort books based on rating in descending order
   const sortByRating = () => {
-    const sorted = [...sortedBooks].sort((a, b) => b.rating - a.rating);
-    console.log("Sorted by Rating:", sorted);
+    const sorted = [...savedBooks].sort((a, b) => b.rating - a.rating);
     setSortedBooks(sorted);
   };
 
   // Function to sort books based on number of pages in descending order
   const sortByPages = () => {
-    const sorted = [...sortedBooks].sort((a, b) => b.totalPages - a.totalPages);
-    console.log("Sorted by Pages:", sorted);
+    const sorted = [...savedBooks].sort((a, b) => b.totalPages - a.totalPages);
     setSortedBooks(sorted);
   };
 
   // Function to sort books based on published year in descending order
   const sortByYear = () => {
-    const sorted = [...sortedBooks].sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
-    console.log("Sorted by Year:", sorted);
+    const sorted = [...savedBooks].sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
     setSortedBooks(sorted);
   };
 
@@ -39,17 +36,7 @@ const { data } = useBooksData();
       sortByYear();
     }
   };
-
-  useEffect(() => {
-    // Update sortedBooks whenever data changes
-    setSortedBooks(data);
-  }, [data]);
-
-  useEffect(() => {
-    // console.log("Sorted Books:", sortedBooks);
-  }, [sortedBooks]);
-
-
+console.log(sortedBooks)
   return (
     <div className="p-4 lg:mt-[30px">
       <div className="bg-[#1313130D] p-6 rounded-[24px]">
@@ -105,7 +92,7 @@ const { data } = useBooksData();
         </Link>
       </div>
       <div className="mt-8">
-        <Outlet></Outlet>
+        <Outlet />
       </div>
       
     </div>

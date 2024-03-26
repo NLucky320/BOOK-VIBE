@@ -1,9 +1,11 @@
 import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 import useLocalStorage from '../Hooks/useLocalStorageData';
+import { getBooks } from '../Utils';
 
 
-const PageToRead = ({ savedBooks }) => {
+const PageToRead = () => {
+    const savedBooks = getBooks();
   if (!savedBooks || savedBooks.length === 0) {
     return <div>No books to display</div>;
   }
@@ -34,9 +36,9 @@ const PageToRead = ({ savedBooks }) => {
 
   return (
     <div>
-      <h2>Pages of Books Marked as 'Read'</h2>
+  
       <BarChart
-        width={500}
+        width={1000}
         height={300}
         data={data}
         margin={{
