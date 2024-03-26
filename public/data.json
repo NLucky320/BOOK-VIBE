@@ -10,7 +10,8 @@
     "category": "Fiction",
     "tags": ["Classic", "Coming of Age", "Legal Drama"],
     "publisher": "J. B. Lippincott & Co.",
-    "yearOfPublishing": 1960
+    "yearOfPublishing": 1960,
+    "library": "Borrow"
   },
   {
     "bookId": 2,
@@ -23,7 +24,8 @@
     "category": "Science Fiction",
     "tags": ["Dystopian", "Political Fiction"],
     "publisher": "Secker & Warburg",
-    "yearOfPublishing": 1949
+    "yearOfPublishing": 1949,
+    "library": "Buy"
   },
   {
     "bookId": 3,
@@ -36,7 +38,8 @@
     "category": "Fiction",
     "tags": ["Classic", "Romance", "Jazz Age"],
     "publisher": "Charles Scribner's Sons",
-    "yearOfPublishing": 1925
+    "yearOfPublishing": 1925,
+    "library": "Not in Library"
   },
   {
     "bookId": 4,
@@ -49,7 +52,8 @@
     "category": "Fiction",
     "tags": ["Coming of Age", "Bildungsroman"],
     "publisher": "Little, Brown and Company",
-    "yearOfPublishing": 1951
+    "yearOfPublishing": 1951,
+    "library": "Borrow"
   },
   {
     "bookId": 5,
@@ -62,7 +66,8 @@
     "category": "Fiction",
     "tags": ["Romance", "Regency Era"],
     "publisher": "T. Egerton, Whitehall",
-    "yearOfPublishing": 1813
+    "yearOfPublishing": 1813,
+    "library": "Borrow"
   },
   {
     "bookId": 6,
@@ -75,6 +80,7 @@
     "category": "Fantasy",
     "tags": ["Adventure", "Epic Fantasy"],
     "publisher": "Allen & Unwin",
-    "yearOfPublishing": 1937
+    "yearOfPublishing": 1937,
+    "library": "Buy"
   }
 ]

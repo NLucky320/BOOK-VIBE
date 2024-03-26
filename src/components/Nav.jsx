@@ -51,12 +51,12 @@ const Nav = () => {
              Pages to Read
             </NavLink>
             <NavLink
-              to="/bookmarks"
+              to="/exploreBooks"
               className={({ isActive }) =>
                 isActive ? "text-[#23BE0A] font-bold border border-solid p-2 px-4 border-[#23BE0A]" : "font-bold"
               }
             >
-             Pages to Read
+             Explore Books
             </NavLink>
             <NavLink
               to="/bookmarks"
