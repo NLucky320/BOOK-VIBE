@@ -36,7 +36,7 @@ const ListedBooks = () => {
       <div className="bg-[#1313130D] p-6 rounded-[24px]">
         <h2 className="text-center font-bold text-4xl">Books</h2>
       </div>
-      <div className="py-8 text-center">
+      <div className="py-14 text-center ">
         <select
           className=" px-8 py-3 bg-[#23BE0A] text-white rounded "
           onChange={handleSortChange}
@@ -78,24 +78,26 @@ const ListedBooks = () => {
                 key={index}
                 className="card flex flex-col items-center md:items-start md:flex-row bg-base-100 shadow-xl mb-4"
               >
-                <div className="w-[230px] h-full items-center text-center">
-                  <figure className="bg-[#F3F3F3] rounded-lg h-full">
+                <div className="w-[230px] h-full items-center text-center pt-10 pl-6">
+                  <figure className="bg-[#F3F3F3] rounded-lg h-full p-4">
                     <img className="h-full" src={book.image} alt="Book Cover" />
                   </figure>
                 </div>
-                <div className="card-body">
+                <div className="card-body text-center md:text-start">
                   <h2>{book.bookName}</h2>
                   <p>By: {book.author}</p>
-                  <div className="flex flex-col md:flex-row gap-2 items-center justify-center">
-                    <span className="text-[#131313] font-bold">Tag: </span>
+                  <div className="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="text-[#131313] font-bold">Tag: </div>
                     {book.tags.map((tag, index) => (
-                      <p
+                      <div
                         className="text-[#23BE0A]  bg-[#17BE0A0D] rounded-[30px] p-2 px-2"
                         key={index}
                       >
                         #{tag}
-                      </p>
+                      </div>
                     ))}
+                    </div>
                     <div className="flex gap-2">
                       <div>
                         <CiLocationOn />
@@ -103,7 +105,7 @@ const ListedBooks = () => {
                       <div>Year of Publishing: {book.yearOfPublishing}</div>
                     </div>
                   </div>
-                  <div className="flex flex-col md:flex-row gap-4 border-b border-dashed items-center md:items-start">
+                  <div className="flex flex-col md:flex-row gap-4 pb-2 border-b border-dashed items-center md:items-start">
                     <div className="flex gap-2">
                       <div>
                         <IoMdContacts />
@@ -117,7 +119,7 @@ const ListedBooks = () => {
                       <div>Page: {book.totalPages}</div>
                     </div>
                   </div>
-                  <div className="card-actions flex flex-col md:flex-row  items-center md:items-start gap-4">
+                  <div className="card-actions flex flex-col md:flex-row items-center pt-2 md:items-start gap-4">
                     <button className="text-[#328EFF] bg-[#328EFF42] p-4 py-2 rounded-[30px]">
                       Category: {book.category}
                     </button>
@@ -136,32 +138,34 @@ const ListedBooks = () => {
             ))}
         </div>
       ) : (
-        <div className="mb-4 mt-4">
+         <div className=" mt-4">
           {displayBooks
             .filter((book) => book.section === "Wishlist")
             .map((book, index) => (
               <div
                 key={index}
-                className="card flex flex-col items-center md:items-start  md:flex-row bg-base-100 shadow-xl mb-4"
+                className="card flex flex-col items-center md:items-start md:flex-row bg-base-100 shadow-xl mb-4"
               >
-                <div className="w-[230px] bg-[#1313130D]">
-                  <figure className="px-10 pt-10 bg-[#F3F3F3] p-4 rounded-lg">
-                    <img className="" src={book.image} alt="Book Cover" />
+                <div className="w-[230px] h-full items-center text-center pt-10 pl-6">
+                  <figure className="bg-[#F3F3F3] rounded-lg h-full p-4">
+                    <img className="h-full" src={book.image} alt="Book Cover" />
                   </figure>
                 </div>
-                <div className="card-body">
+                <div className="card-body text-center md:text-start">
                   <h2>{book.bookName}</h2>
                   <p>By: {book.author}</p>
-                  <div className="flex flex-col md:flex-row gap-2 items-center justify-center">
-                    <span className="text-[#131313] font-bold">Tag: </span>
+                  <div className="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="text-[#131313] font-bold">Tag: </div>
                     {book.tags.map((tag, index) => (
-                      <p
+                      <div
                         className="text-[#23BE0A]  bg-[#17BE0A0D] rounded-[30px] p-2 px-2"
                         key={index}
                       >
                         #{tag}
-                      </p>
+                      </div>
                     ))}
+                    </div>
                     <div className="flex gap-2">
                       <div>
                         <CiLocationOn />
@@ -169,7 +173,7 @@ const ListedBooks = () => {
                       <div>Year of Publishing: {book.yearOfPublishing}</div>
                     </div>
                   </div>
-                  <div className="flex flex-col md:flex-row gap-4 border-b border-dashed items-center md:items-start">
+                  <div className="flex flex-col md:flex-row gap-4 pb-2 border-b border-dashed items-center md:items-start">
                     <div className="flex gap-2">
                       <div>
                         <IoMdContacts />
@@ -183,7 +187,7 @@ const ListedBooks = () => {
                       <div>Page: {book.totalPages}</div>
                     </div>
                   </div>
-                  <div className="card-actions flex flex-col md:flex-row  items-center md:items-start gap-4">
+                  <div className="card-actions flex flex-col md:flex-row items-center pt-2 md:items-start gap-4">
                     <button className="text-[#328EFF] bg-[#328EFF42] p-4 py-2 rounded-[30px]">
                       Category: {book.category}
                     </button>
