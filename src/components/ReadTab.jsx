@@ -32,7 +32,7 @@ console.log(displayBooks)
     <div>
           <div className="mb-4 mt-4">
               <div className="pb-6 text-center">
-                   <select className=" px-8 py-3 bg-[#23BE0A] text-white rounded  border-none" onChange={handleSortChange} value={sortOption}>
+                   <select className=" px-8 py-3 bg-[#23BE0A] text-white rounded " onChange={handleSortChange} value={sortOption}>
           <option >Sort By</option>
           <option value="rating">Rating</option>
           <option value="totalPages">Number of pages</option>
