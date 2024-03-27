@@ -14,7 +14,7 @@ const AboutUs = () => {
             alt=""
             className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
           />
-          <div className="p-6 space-y-2 lg:col-span-5">
+          <div className="p-2 space-y-2 lg:col-span-5">
             <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
               Our core focus is building a bridge between authors and readers
               through active book selections.{" "}
@@ -31,7 +31,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="px-12 space-y-2">
+      <div className="px-6 space-y-2">
         <h2 className="text-4xl font-bold">Our Services & Functions</h2>
         <div>
           <p>
@@ -55,7 +55,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="grid mt-4 grid-cols-1 mx-auto lg:px-8 md:grid-cols-2 md:divide-x p-6 rounded-lg">
-        <div className="py-6 md:py-0 md:px-6">
+        <div className="py-6 md:py-0">
           <h1 className="text-4xl font-bold">Get in touch</h1>
           <p className="pt-2 pb-4">Fill in the form to start a conversation</p>
           <div className="space-y-4">

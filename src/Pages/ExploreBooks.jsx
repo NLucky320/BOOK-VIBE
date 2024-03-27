@@ -11,14 +11,14 @@ const ExploreBooks = () => {
     }, [data]);
 
     return (
-        <div className="p-4 mt-[80px] text-center"> 
+        <div className="p-4 mt-[80px] text-center m-4"> 
             <h2 className="font-bold text-[40px]">Explore Books</h2>
               <div className="hero bg-[#0d0d0d0d] mt-4 md:mt-[52px] md:py-[80px] rounded-[24px]">
   <div className="hero-content flex-col lg:flex-row-reverse gap-4 lg:gap-[86px]">
-    <img src={image} className="max-w-sm mx-auto rounded-lg shadow-2xl" />
+    <img src={image} className="max-w-[310px] mx-auto rounded-lg shadow-2xl p-4" />
     <div className="max-w-[526px] mx-auto">
-      <h1 className="text-4xl pt-2 md:text-5xl font-bold pb-4">Hundreds of books picked for you</h1>
-                        <p className="text-xl pb-4">Explore a curated catalogue, completely free</p>
+      <h1 className="text-3xl pt-2 md:text-5xl font-bold pb-4">Hundreds of books picked for you</h1>
+                        <p className="text-lg md:text-xl pb-4">Explore a curated catalogue, completely free</p>
      
     </div>
   </div>

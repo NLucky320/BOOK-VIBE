@@ -34,7 +34,7 @@ const BookDetails = () => {
         saveBooks(singleData, "Wishlist");
     };
     return (
-         <Card className="w-full flex-col items-center md:flex-row my-[50px] gap-4">
+         <Card className="w-full flex-col items-center md:flex-row my-[50px] gap-4 p-4 m-4 mt-[80px]">
       <CardHeader
         shadow={false}
         floated={false}
@@ -80,7 +80,7 @@ const BookDetails = () => {
                 <Typography color="gray" className="font-normal text-[#131313]">
   <span className="text-[#131313B2]">    Rating: </span> {rating}
                 </Typography>
-              <div className="items-center flex-shrink-0 hidden lg:flex gap-4">
+              <div className="items-center flex-shrink flex gap-4">
                     <button onClick={handleSaveToRead} className="self-center px-8 py-3 text-[#131313] rounded border border-solid border-[#1313134D]">Read</button>
                     <button onClick={handleSaveToWishlist} className="self-center px-8 py-3 font-semibold rounded bg-[#59C6D2] text-white">Wishlist</button>
                 </div>

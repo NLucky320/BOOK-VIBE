@@ -6,7 +6,7 @@ const ExploreBook = ({book}) => {
       
            <div className="card bg-base-100 shadow-xl h-full ">
   <figure className="px-10 py-5 bg-blue-gray-50">
-    <img src={book.image} alt="Shoes" className="rounded-xl" />
+    <img src={book.image} alt="Shoes" className="rounded-xl " />
   </figure>
   <div className="card-body items-center text-center">
                     <h2 className="card-title">{ book.bookName}</h2>
