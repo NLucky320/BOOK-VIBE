@@ -8,7 +8,7 @@
     "totalPages": 281,
     "rating": 4.5,
     "category": "Fiction",
-    "tags": ["Classic", "Coming of Age", "Legal Drama"],
+    "tags": ["Classic","Drama"],
     "publisher": "J. B. Lippincott & Co.",
     "yearOfPublishing": 1960,
     "library": "Borrow"
@@ -36,7 +36,7 @@
     "totalPages": 180,
     "rating": 4.3,
     "category": "Fiction",
-    "tags": ["Classic", "Romance", "Jazz Age"],
+    "tags": ["Classic", "Romance"],
     "publisher": "Charles Scribner's Sons",
     "yearOfPublishing": 1925,
     "library": "Not in Library"

@@ -23,13 +23,13 @@ const ReadBooks = () => {
             <h2>{book.bookName}</h2>
             <p>By: {book.author}</p>
             <div className="flex gap-2 items-center justify-center">
-              <span className="text-[#131313] font-bold">Tag: </span>{" "}
+              <span className="text-[#131313] font-bold">Tag: </span>
               {book.tags.map((tag, index) => (
                 <p
                   className="text-[#23BE0A]  bg-[#17BE0A0D] rounded-[30px] p-2 px-6"
                   key={index}
                 >
-                  {" "}
+                
                   #{tag}
                 </p>
               ))}

@@ -3,7 +3,7 @@ import { getBooks } from '../Utils';
 
 const useLocalStorage = () => {
     const [localData, setLocalData] = useState([]);
-    console.log(localData)
+    // console.log(localData)
     useEffect(() => {
         setLocalData(getBooks())
     },[])

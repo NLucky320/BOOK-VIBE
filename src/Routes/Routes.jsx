@@ -31,19 +31,19 @@ export const router = createBrowserRouter([
             path: '/listedBooks',
             element: <ListedBooks></ListedBooks>,
             //  loader:()=>fetch('/data.json'),
-            children: [ 
-                {
-                    index: true,
-                    element: <ReadBooks></ReadBooks>,
-                    //  loader:()=>fetch('/data.json'),
-            },
-                 {
-            path: 'wishlist',
-                     element: <Wishlist></Wishlist>,
-            //  loader:()=>fetch('/data.json'),
-        }
+        //     children: [ 
+        //         {
+        //             index: true,
+        //             element: <ReadBooks></ReadBooks>,
+        //             //  loader:()=>fetch('/data.json'),
+        //     },
+        //          {
+        //     path: 'wishlist',
+        //              element: <Wishlist></Wishlist>,
+        //     //  loader:()=>fetch('/data.json'),
+        // }
       
-            ]
+        //     ]
         },
         {
             path: '/pagesToRead',
