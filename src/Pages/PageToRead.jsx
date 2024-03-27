@@ -16,7 +16,7 @@ import { getBooks } from "../Utils";
 const PageToRead = () => {
   const savedBooks = getBooks();
   if (!savedBooks || savedBooks.length === 0) {
-    return <div>No books to display</div>;
+    return <div className="text-4xl text-center font bold mt-40">No book to display</div>;
   }
   const { localData } = useLocalStorage();
   // console.log(localData)

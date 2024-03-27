@@ -2,7 +2,7 @@ import React from "react";
 import image from "../../src/assets/images.jpg";
 const AboutUs = () => {
   return (
-    <section className="p-4 mt-[100px] lg:mt-[40px] bg-[#13131308]">
+    <section className="p-4 mt-[80px]  bg-[#13131308]">
       <h1 className="text-4xl font-bold leading-none sm:text-5xl text-center pb-4">
         About Book Vibe
       </h1>

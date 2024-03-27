@@ -27,12 +27,12 @@ const ListedBooks = () => {
     };
     sortArray(sortOption);
   }, [sortOption]);
-  console.log(displayBooks);
+  // console.log(displayBooks);
   const handleSortChange = (e) => {
     setSortOption(e.target.value);
   };
   return (
-    <div className="p-4 lg:mt-[30px]">
+    <div className="p-4 mt-[80px]">
       <div className="bg-[#1313130D] p-6 rounded-[24px]">
         <h2 className="text-center font-bold text-4xl">Books</h2>
       </div>

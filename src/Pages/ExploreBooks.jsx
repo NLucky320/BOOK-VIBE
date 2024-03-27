@@ -11,7 +11,7 @@ const ExploreBooks = () => {
     }, [data]);
 
     return (
-        <div className="p-4 mt-[100px] lg:mt-[40px] text-center"> 
+        <div className="p-4 mt-[80px] text-center"> 
             <h2 className="font-bold text-[40px]">Explore Books</h2>
               <div className="hero bg-[#0d0d0d0d] mt-4 md:mt-[52px] md:py-[80px] rounded-[24px]">
   <div className="hero-content flex-col lg:flex-row-reverse gap-4 lg:gap-[86px]">
