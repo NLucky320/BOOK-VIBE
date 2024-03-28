@@ -47,7 +47,7 @@ const BookDetails = () => {
       <CardHeader
         shadow={false}
         floated={false}
-        className="m-0  w-1/2 lg:w-2/5 shrink-0 rounded-r-none"
+        className="m-0  w-1/2 lg:w-2/5 shrink-0 rounded-[30px]"
       >
         <img
           src={image}
