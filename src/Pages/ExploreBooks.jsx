@@ -19,7 +19,7 @@ const ExploreBooks = () => {
         <div className="hero-content flex-col lg:flex-row-reverse gap-4 lg:gap-[86px] pr-4">
           <img src={image} className="max-w-[280px] rounded-lg shadow-2xl" />
           <div className="max-w-[500px]">
-            <h1 className="text-5xl font-bold pb-10">
+            <h1 className="text-3xl md:text-5xl font-bold pb-10">
               {" "}
               Hundreds of books picked for you
             </h1>

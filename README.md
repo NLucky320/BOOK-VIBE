@@ -1,5 +1,3 @@
-# React + Vite
-
 # BOOK VIBE
 
 Books to freshen up your bookshelf
@@ -8,9 +6,7 @@ Books to freshen up your bookshelf
 
 https://visionary-pudding-b7839e.netlify.app/
 
-Today, I completed Assignment 8 provided by "Programming Hero" with proficiency, covering all its components, including the bonus and optional sections. The key feature of the website are:
-
-# Feature
+# Characteristics and Features
 
 - Custom JSON file containing personalized data
 - Use of the useEffect hook for fetching data from an API
@@ -20,5 +16,3 @@ Today, I completed Assignment 8 provided by "Programming Hero" with proficiency,
 - Responsive design for seamless user experience across mobile devices
 - Dynamic routes using React Router for navigation flexibility
 - Interactive charts constructed using Recharts for effective data visualization
-
-Overall, the assignment allowed me to consolidate my understanding of fundamental React concepts while enhancing my proficiency in building dynamic and responsive web applications.
